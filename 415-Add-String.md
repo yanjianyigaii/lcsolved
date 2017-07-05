@@ -1,3 +1,4 @@
+** java medium solution
 ```
 public class Solution {
     public String addStrings(String num1, String num2) {
@@ -53,3 +54,37 @@ public class Solution {
 }
 ```
 
+**java easy solution
+```
+public class Solution {
+    public String addStrings(String num1, String num2) {
+        int length = Math.max(num1.length(), num2.length());
+        StringBuilder sb1 = addLeadingZero(num1, length);
+        StringBuilder sb2 = addLeadingZero(num2, length);
+        char[] charnum1 = sb1.toString().toCharArray();
+        char[] charnum2 = sb2.toString().toCharArray();  
+        StringBuilder sb = new StringBuilder();
+        int carry = 0;
+        for(int i= length-1; i>=0; i--){
+            if(charnum1.length == charnum2.length){
+                int sum = 
+                    (charnum1[i]-48+charnum2[i]-48+carry)%10;
+                carry = 
+                    (charnum1[i]-48+charnum2[i]-48+carry)/10;
+                sb.insert(0, sum);
+                if(i==0 && carry ==1){
+                    sb.insert(0, '1');
+                }
+            }
+        }
+        return sb.toString();
+    }
+    public StringBuilder addLeadingZero(String num, int length){
+        StringBuilder sb = new StringBuilder(num);
+        while(sb.length()<length){
+            sb.insert(0,'0');
+        }
+        return sb;
+    }
+}
+```
