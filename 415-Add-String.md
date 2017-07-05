@@ -1,4 +1,4 @@
-** java medium solution
+## java medium solution
 ```
 public class Solution {
     public String addStrings(String num1, String num2) {
@@ -54,7 +54,7 @@ public class Solution {
 }
 ```
 
-**java easy solution
+## java easy solution
 ```
 public class Solution {
     public String addStrings(String num1, String num2) {
